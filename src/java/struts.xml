@@ -1,0 +1,37 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="registeruser" class="struts2.test.actions.UserAction" method="registerUser">
+            <result name="REGISTER">/register.jsp</result>
+        </action>
+        <action name="login" class="struts2.test.actions.UserAction" method="userLogin">
+            <result name="LOGIN">/dashboard.jsp</result>
+            <result name="LOGINFAILED">/login.jsp</result>
+        </action>
+        <action name="report" class="struts2.test.actions.UserAction" method="showUsers">
+            <result name="REPORT">/report.jsp</result>
+        </action>
+        <action name="updatedetails" class="struts2.test.actions.UserAction" method="updateUser">
+            <result name="UPDATE">/update.jsp</result>
+        </action>
+        <action name="deleterecord" class="struts2.test.actions.UserAction" method="deleteUser">
+            <result name="DELETE">/delete.jsp</result>
+        </action>
+        <action name="registerProduct" class="struts2.test.actions.ProductAction" method="registerProduct">
+            <result name="REGISTERPRODUCT">/registerProduct.jsp</result>
+        </action>
+        <action name="productReport" class="struts2.test.actions.ProductAction" method="showProducts">
+            <result name="PRODUCTREPORT">/productReport.jsp</result>
+        </action>
+        <action name="updateproducts" class="struts2.test.actions.ProductAction" method="updateProduct">
+            <result name="UPDATEPRODUCT">/updateProduct.jsp</result>
+        </action>
+        <action name="deleteProduct" class="struts2.test.actions.ProductAction" method="deleteProduct">
+            <result name="DELETEPRODUCT" type="chain">productReport</result>
+        </action>
+    </package>
+</struts>
