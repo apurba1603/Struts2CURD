@@ -68,6 +68,7 @@ public class UserAction extends ActionSupport {
                 email = user.getEmail();
                 phoneNumber = user.getPhoneNumber();
                 login = "LOGIN";
+                log.info("This is log for userLogin() method");
             } else {
                 setMsg("Login failed");
                 login = "LOGINFAILED";
@@ -77,7 +78,7 @@ public class UserAction extends ActionSupport {
             e.printStackTrace();
             login = "ERROR";
         }
-        log.info("This is log for userLogin() method");
+        
         return login;
     }
 
